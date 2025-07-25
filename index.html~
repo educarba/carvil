@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CARVIL Technology Solutions</title>
+  <meta name="description" content="Transformamos tu negocio con soluciones digitales guiadas por IA." />
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Font Awesome para íconos sociales sin integrity -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+  <header>
+    <button id="toggle-theme" aria-label="Cambiar tema">
+      <i data-lucide="moon" class="icon-theme"></i>
+    </button>
+
+    <div class="logo-title">
+      <img src="logosf.png" alt="Logo" />
+      CARVIL Technology Solutions
+    </div>
+
+    <nav class="menu-principal">
+      <a href="#servicios" class="menu-link">Servicios</a>
+      <a href="#nosotros" class="menu-link">Nosotros</a>
+      <a href="#contacto" class="menu-link">Contacto</a>
+    </nav>
+
+    <div class="social-icons">
+      <a href="https://facebook.com/tuusuario" target="_blank" aria-label="Facebook">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+      <a href="https://twitter.com/tuusuario" target="_blank" aria-label="X">
+        <i class="fab fa-twitter"></i>
+      </a>
+      <a href="https://linkedin.com/in/tuusuario" target="_blank" aria-label="LinkedIn">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <!-- Servicios -->
+    <section class="servicios" id="servicios">
+      <h2 class="servicios-titulo">Nuestros Servicios</h2>
+      <div class="servicios-texto">Ofrecemos soluciones tecnológicas integrales, desde sistemas empresariales completos hasta herramientas específicas que impulsan la transformación digital de tu negocio</div>
+      <div class="rows">
+        <div class="col1"><h3>Sistemas ERP</h3><p>Integración completa y eficiente de todos los procesos empresariales clave como finanzas, recursos humanos, cadena de suministro, inventarios y ventas en una única plataforma centralizada. Facilita la gestión, optimiza recursos y mejora la toma de decisiones para impulsar la productividad y el crecimiento sostenible de tu empresa.</p></div>
+        <div class="col2"><h3>Sistemas CRM</h3><p>Sistemas CRM
+Optimizamos la gestión de la relación con tus clientes mediante la automatización inteligente del proceso de ventas, seguimiento personalizado y análisis de datos. Esto permite mejorar la experiencia del cliente, aumentar la fidelización y maximizar las oportunidades comerciales de manera eficiente y escalable.</p></div>
+        <div class="col3"><h3>Soluciones Multicanal</h3><p>Servicios Digitales integrados para web, móviles y múltiples dispositivos. Soluciones Multicanal. Aplicaciones móviles eficientes, rápidas y adaptadas a cada necesidad. Diseño web responsivo y optimizado para ventas. Proyectos modernos con tecnologías actualizadas y diseño profesional</p></div>
+        <div class="col4"><h3>Servicios en la Nube</h3><p>Infraestructura escalable y remota para tu negocio. Seguridad informática, análisis de datos, ciberseguridad y protección de datos. Cloud y VPS: infraestructura de servidores en la nube seguros. Nuestro servicio es 24/7 debido a nuestro sistema estable.</p></div>
+        <div class="col6"><h3>Automatización n8n</h3><p>Implementación de automatización con inteligencia artificial. Agentes Inteligentes en nuestro VPS n8n, publicaciones automatizadas en la web, Redes Sociales. Plataformas de comunicación multicanal. Agenda de Citas fecha y hora de contacto con el cliente, almacenamiento de información de cada cliente</p></div>
+        <div class="col7"><h3>Gestión de Contenidos Web</h3><p>Diseño web responsivo y optimizado para ventas. Proyectos modernos con tecnología actualizada, diseño profesional y portales corporativos. Contenido Visual y Animaciones, diseño de logo, icono, portada, background para la página Web y redes sociales para aumentar ventas y presencia digital.</p></div>
+      </div>
+    </section>
+
+    <!-- Nosotros -->
+    <section class="nosotros" id="nosotros">
+      <h2 class="titulo-seccion">Sobre CARVIL Technology Solutions</h2>
+      <p>Somos una empresa comprometida con la excelencia tecnológica, dedicada a transformar negocios a través de soluciones digitales innovadoras y personalizadas, guiadas por IA.</p>
+      <h3>Nuestra Historia</h3>
+      <p>Fundada con la visión de democratizar el acceso a tecnologías avanzadas, Somos una empresa comprometida con la excelencia tecnológica, dedicada a transformar negocios a través de soluciones digitales innovadoras y personalizadas. CARVIL S.A.S. Technology Solutions ha sido concebido con el fin de Impulsar cada decisión en tu industria con el poder de la IA con el fin de automatizar agilmente la transformación digital empresarial.
+Durante más de 5 años, hemos ayudado a empresas a optimizar sus procesos, mejorar su eficiencia y alcanzar sus objetivos de crecimiento a través de la tecnología.</p>
+      <h3>Nuestra Misión</h3>
+      <p>Empoderar a las empresas con soluciones tecnológicas integrales que impulsen su competitividad y crecimiento sostenible en la era digital.</p>
+      <h3>Nuestra Visión</h3>
+      <p>Ser la empresa líder en soluciones tecnológicas innovadoras, reconocida por nuestra excelencia, confiabilidad y capacidad de adaptación a las necesidades cambiantes del mercado Latinoamericano</p>
+      <h3>Nuestros Valores</h3>
+      <ul>
+        <li><strong>Innovación:</strong> Implementamos las últimas tecnologías.</li>
+        <li><strong>Calidad:</strong> Soluciones confiables y robustas.</li>
+        <li><strong>Adaptabilidad:</strong> Nos ajustamos a cada cliente.</li>
+        <li><strong>Soporte 24/7:</strong> Acompañamiento continuo.</li>
+      </ul>
+    </section>
+
+    <!-- Proyectos -->
+  <section class="section" id="proyectos">
+    <h2 class="titulo-seccion">Nuestros Proyectos</h2>
+    <ul>
+      <li><strong>Sistema ERP Retail:</strong> Implementación completa de sistema ERP para cadena de tiendas con 15 sucursales, integrando inventarios, ventas, finanzas y RRHH. <br><em>Tecnologías:</em> React, Node.js, PostgreSQL, AWS</li>
+      <li><strong>App Móvil Logística:</strong> Aplicación móvil para gestión de entregas en tiempo real con geolocalización y notificaciones push. <br><em>Tecnologías:</em> React Native, Firebase, Google Maps API</li>
+      <li><strong>Plataforma E-learning:</strong> Portal educativo con sistema de videoconferencias, evaluaciones automáticas y seguimiento de progreso. <br><em>Tecnologías:</em> Vue.js, WebRTC, MongoDB, Socket.io</li>
+      <li><strong>Dashboard Analytics:</strong> Sistema de análisis de datos con visualizaciones interactivas para toma de decisiones empresariales. <br><em>Tecnologías:</em> D3.js, Python, FastAPI, Redis</li>
+      <li><strong>Infraestructura Cloud:</strong> Migración completa a la nube con alta disponibilidad, escalabilidad automática y respaldo automatizado. <br><em>Tecnologías:</em> AWS, Docker, Kubernetes, Terraform</li>
+      <li><strong>Sistema de Seguridad:</strong> Implementación de sistema de seguridad multicapa con autenticación biométrica y monitoreo. <br><em>Tecnologías:</em> Blockchain, Biometrics API, Machine Learning</li>
+    </ul>
+  </section>
+
+    <!-- Contacto -->
+    <section class="contacto" id="contacto">
+      <h2 class="titulo-seccion">Contacto</h2>
+      <form action="http://n8n.ecarballogais.es/webhook/formcarvil" method="POST">
+        <label for="nombre">Nombre Completo *</label>
+        <input type="text" id="nombre" name="nombre" required />
+        <label for="email">Correo Electrónico *</label>
+        <input type="email" id="email" name="email" required />
+        <label for="empresa">Empresa</label>
+        <input type="text" id="empresa" name="empresa" />
+        <label for="tel">Teléfono</label>
+        <input type="tel" id="tel" name="tel" />
+        <label for="servicio">Servicio de Interés</label>
+        <select id="servicio" name="servicio" required>
+          <option disabled selected value="">Seleccione una opción</option>
+          <option>Desarrollo Web</option>
+          <option>Aplicaciones Móviles</option>
+          <option>Soluciones Cloud</option>
+          <option>Automatización IA</option>
+        </select>
+        <label for="mensaje">Mensaje *</label>
+        <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+        <button type="submit">Enviar Solicitud</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 CARVIL Technology Solutions. Todos los derechos reservados.
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      lucide.createIcons();
+
+      const toggleButton = document.getElementById("toggle-theme");
+      toggleButton.addEventListener("click", () => {
+        document.body.classList.toggle("dark");
+      });
+    });
+  </script>
+</body>
+
+</html>

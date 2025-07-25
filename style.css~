@@ -1,0 +1,132 @@
+/* Estilo para el header */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+  background-color: var(--header-bg, #f5f5f5);
+  color: var(--text-color, #333);
+  font-family: 'Inter', sans-serif;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+/* Logo y título */
+.logo-title {
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+  font-size: 1.25rem;
+  gap: 0.5rem;
+  color: var(--text-color);
+}
+
+/* Menú principal */
+.menu-principal {
+  display: flex;
+  gap: 1.5rem;
+  flex-grow: 1;
+  justify-content: center;
+}
+
+.menu-link {
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: 600;
+  font-size: 1rem;
+  transition: color 0.3s;
+}
+
+.menu-link:hover {
+  color: var(--primary-color, #007bff);
+}
+
+/* Iconos sociales */
+.social-icons {
+  display: flex;
+  gap: 1rem;
+  font-size: 1.1rem;
+  color: var(--text-color);
+}
+
+.social-icons a:hover {
+  color: var(--primary-color);
+}
+
+/* Botón cambiar tema */
+#toggle-theme {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.3rem;
+  color: var(--text-color);
+  padding: 0.2rem;
+  margin-right: 0.5rem;
+  transition: color 0.3s;
+}
+
+/* Selector idioma */
+#language-selector {
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.3rem;
+  border: 1px solid var(--border-color, #ccc);
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+  background-color: var(--bg-color, #fff);
+  color: var(--text-color, #333);
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+/* Cambios en modo oscuro */
+body.dark {
+  --header-bg: #222;
+  --text-color: #eee;
+  --primary-color: #0af;
+  --border-color: #555;
+  --bg-color: #333;
+}
+
+body.dark header {
+  background-color: var(--header-bg);
+  color: var(--text-color);
+}
+
+body.dark .menu-link,
+body.dark .social-icons,
+body.dark #toggle-theme,
+body.dark .logo-title,
+body.dark #language-selector {
+  color: var(--text-color);
+  border-color: var(--border-color);
+  background-color: var(--bg-color);
+}
+
+/* Responsividad: en pantallas pequeñas, los elementos del header se apilan */
+@media (max-width: 700px) {
+  header {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+  .menu-principal {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+  }
+  .logo-title {
+    order: 1;
+    width: 100%;
+    justify-content: center;
+  }
+  .social-icons {
+    order: 2;
+  }
+  #toggle-theme {
+    order: 4;
+  }
+  #language-selector {
+    order: 5;
+  }
+}
