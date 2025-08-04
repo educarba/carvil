@@ -174,6 +174,19 @@ Durante más de 5 años, hemos ayudado a empresas a optimizar sus procesos, mejo
     &copy; 2025 CARVIL Technology Solutions. <span data-i18n="allRightsReserved">Todos los derechos reservados.</span>
   </footer>
 
+  <!-- Botón flotante -->
+<div id="chat-toggle"></div>
+
+<!-- Ventana de chat -->
+<div id="chat-window">
+  <div id="chat-header">💬 Asistente Virtual CARVIL</div>
+  <div id="chat-messages"></div>
+  <div id="chat-input-area">
+    <input type="text" id="chat-input" placeholder="Escribe un mensaje...">
+    <button id="chat-send">Enviar</button>
+  </div>
+</div>
+
   <!-- Scripts -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
@@ -336,7 +349,69 @@ Durante más de 5 años, hemos ayudado a empresas a optimizar sus procesos, mejo
         translatePage(e.target.value);
       });
     });
-  </script>
+    </script>
+
+    <script>
+  const toggleBtn = document.getElementById('chat-toggle');
+  const chatWindow = document.getElementById('chat-window');
+  const messages = document.getElementById('chat-messages');
+  const input = document.getElementById('chat-input');
+  const sendBtn = document.getElementById('chat-send');
+
+  // Abrir/cerrar chat
+  toggleBtn.addEventListener('click', () => {
+    chatWindow.classList.toggle('open');
+    if (chatWindow.classList.contains('open') && messages.childElementCount === 0) {
+      addMessage('Bot', '¡Hola! Soy tu asistente virtual. ¿En qué puedo ayudarte?', true);
+    }
+  });
+
+  // Enviar mensaje
+  sendBtn.addEventListener('click', sendMessage);
+  input.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') sendMessage();
+  });
+
+  function sendMessage() {
+    const text = input.value.trim();
+    if (!text) return;
+
+    addMessage('Tú', text, false);
+    input.value = '';
+
+    // Indicador "Escribiendo..."
+    const typingIndicator = document.createElement('div');
+    typingIndicator.classList.add('typing');
+    typingIndicator.textContent = 'Bot está escribiendo...';
+    messages.appendChild(typingIndicator);
+    messages.scrollTop = messages.scrollHeight;
+
+    // Llamada a tu webhook de n8n
+    fetch('https://tu-n8n-webhook.com/webhook', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ message: text })
+    })
+    .then(res => res.json())
+    .then(data => {
+      typingIndicator.remove();
+      addMessage('Bot', data.reply || 'No hay respuesta disponible.', true);
+    })
+    .catch(err => {
+      typingIndicator.remove();
+      addMessage('Bot', 'Error de conexión.', true);
+    });
+  }
+
+  function addMessage(sender, text, isBot) {
+    const msg = document.createElement('div');
+    msg.classList.add('msg', isBot ? 'bot-msg' : 'user-msg');
+    msg.innerHTML = `<strong>${sender}:</strong> ${text}`;
+    messages.appendChild(msg);
+    messages.scrollTop = messages.scrollHeight;
+  }
+</script>
+
 </body>
 
 </html>
