@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chatbot - CARVIL</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: row;
+      height: 100vh;
+      background-color: #f5f5f5;
+    }
+
+    .chat-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      flex: 1;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    .chat-messages {
+      flex: 1;
+      overflow-y: auto;
+      padding-right: 10px;
+    }
+
+    .message {
+      max-width: 70%;
+      margin: 10px 0;
+      padding: 12px;
+      border-radius: 10px;
+      line-height: 1.5;
+    }
+
+    .user {
+      align-self: flex-end;
+      background-color: #dcf8c6;
+    }
+
+    .bot {
+      align-self: flex-start;
+      background-color: #fff;
+      border: 1px solid #ddd;
+    }
+
+    .input-container {
+      display: flex;
+      border-top: 1px solid #ccc;
+      padding-top: 10px;
+    }
+
+    .input-container input {
+      flex: 1;
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      outline: none;
+    }
+
+    .input-container button {
+      margin-left: 10px;
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      background-color: #1976d2;
+      color: white;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .input-container button:hover {
+      background-color: #1565c0;
+    }
+  </style>
+</head>
+<body>
+  <div class="chat-container">
+    <div id="chat" class="chat-messages">
+      <!-- Mensajes aparecerán aquí -->
+    </div>
+    <div class="input-container">
+      <input type="text" id="userInput" placeholder="Escribe tu mensaje..." />
+      <button onclick="sendMessage()">Enviar</button>
+    </div>
+  </div>
+
+  <script>
+    const chat = document.getElementById('chat');
+    const input = document.getElementById('userInput');
+
+    function appendMessage(content, sender) {
+      const message = document.createElement('div');
+      message.className = `message ${sender}`;
+      message.innerText = content;
+      chat.appendChild(message);
+      chat.scrollTop = chat.scrollHeight;
+    }
+
+    function sendMessage() {
+      const message = input.value.trim();
+      if (message === '') return;
+
+      appendMessage(message, 'user');
+      input.value = '';
+
+      fetch('https://betting-sweden-brothers-construct.trycloudflare.com/webhook/guardar-cita', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ message })
+      })
+      .then(res => res.json())
+      .then(data => {
+        const botReply = data.reply || 'Respuesta recibida pero sin contenido.';
+        appendMessage(botReply, 'bot');
+      })
+      .catch(err => {
+        console.error('Error al contactar el webhook:', err);
+        appendMessage('Error al contactar al servidor.', 'bot');
+      });
+    }
+
+    // Permitir Enter
+    input.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') sendMessage();
+    });
+  </script>
+</body>
+</html>
