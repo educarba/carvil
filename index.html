@@ -371,7 +371,7 @@ Durante más de 5 años, hemos ayudado a empresas a optimizar sus procesos, mejo
   toggleBtn.addEventListener('click', () => {
     chatWindow.classList.toggle('open');
     if (chatWindow.classList.contains('open') && messages.childElementCount === 0) {
-      addMessage('Bot', '¡Hola! Soy tu asistente virtual. ¿En qué puedo ayudarte?', true);
+      addMessage('Bot', '¡Hola! Soy CarvilBot, tu asistente virtual. ingresa tu email para comenzar ¿En qué puedo ayudarte?', true);
     }
   });
 
@@ -396,7 +396,7 @@ Durante más de 5 años, hemos ayudado a empresas a optimizar sus procesos, mejo
     messages.scrollTop = messages.scrollHeight;
 
     // Llamada a tu webhook de n8n
-    fetch('https://heart-transaction-puerto-fifty.trycloudflare.com/webhook/guardar-cita', {
+    fetch('https://nursery-durham-somebody-housewives.trycloudflare.com/webhook/guardar-cita', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ message: text })

@@ -9,12 +9,13 @@
 
     :root {
       --primary-color: #3b82f6;
-      --secondary-color: #f3f4f6;
-      --text-color: #1f2937;
-      --input-bg: #ffffff;
+      --secondary-color: #111827; /* Fondo oscuro */
+      --text-color: #f9fafb;
+      --input-bg: #1f2937;
+      --input-border: #374151;
       --button-hover: #2563eb;
-      --border-radius: 8px;
-      --shadow: 0 4px 12px rgba(0,0,0,0.1);
+      --border-radius: 10px;
+      --shadow: 0 4px 20px rgba(0,0,0,0.3);
     }
 
     body {
@@ -28,7 +29,7 @@
     }
 
     .form-container {
-      background-color: #ffffff;
+      background-color: #1e293b;
       padding: 40px 30px;
       border-radius: var(--border-radius);
       box-shadow: var(--shadow);
@@ -55,19 +56,20 @@
 
     input[type="text"],
     input[type="email"] {
-      width: 100%;
+      width: 90%;
       padding: 12px 15px;
-      border: 1px solid #d1d5db;
+      border: 1px solid var(--input-border);
       border-radius: var(--border-radius);
       background-color: var(--input-bg);
       font-size: 16px;
       color: var(--text-color);
-      transition: border 0.3s;
+      transition: border 0.3s, background-color 0.3s;
     }
 
     input[type="text"]:focus,
     input[type="email"]:focus {
       border-color: var(--primary-color);
+      background-color: #111827;
       outline: none;
     }
 
@@ -92,7 +94,7 @@
       display: none;
       margin-top: 20px;
       text-align: center;
-      color: green;
+      color: #22c55e;
       font-weight: 600;
     }
   </style>
@@ -133,19 +135,17 @@
     const data = { username, email };
 
     try {
-      const response = await fetch('https://heart-transaction-puerto-fifty.trycloudflare.com/webhook/username', {
+      const response = await fetch('https://nursery-durham-somebody-housewives.trycloudflare.com/webhook/username', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data)
       });
 
-      // Leer el cuerpo de la respuesta aunque sea un error
       const result = await response.text();
 
       if (response.ok) {
         successMessage.style.display = 'block';
         console.log('Respuesta del webhook:', result);
-
         setTimeout(() => {
           window.location.href = 'ia.html';
         }, 500);
@@ -158,8 +158,7 @@
       alert('Error de conexión con el webhook. Revisa la consola para más detalles.');
     }
   });
-</script>
-
+  </script>
 
 </body>
 </html>

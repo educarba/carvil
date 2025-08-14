@@ -98,9 +98,8 @@ body.dark #chat-input { background: #2a2a3c; color: #eee; border: 1px solid #555
 
 <div id="chat-container">
   <div id="chat-messages">
-    <div class="message-line"><strong>Bot:</strong> ¡Hola! 👋 Para empezar, necesito un nombre o identificador que quieras usar en esta sesión. Esto me ayudará a personalizar tu Agente Virtual y guardar tus preferencias.  
-Por favor, ingresa un USERNAME para comenzar.
-:
+    <div class="message-line"><strong>Bot:</strong> ¡Hola! 👋 vamos a personalizar tu Agente Virtual y guardar tus preferencias, te guiare en el proceso, Estas listo?
+
 
 
 </div>
@@ -177,7 +176,7 @@ async function sendMessage(customText){
   messagesContainer.scrollTop=messagesContainer.scrollHeight;
 
   try{
-    const res=await fetch('https://heart-transaction-puerto-fifty.trycloudflare.com/webhook/agente',{
+    const res=await fetch('https://nursery-durham-somebody-housewives.trycloudflare.com/webhook/agente',{
       method:'POST',
       headers:{'Content-Type':'application/json'},
       body: JSON.stringify({message:text})
