@@ -104,10 +104,10 @@ async function sendMessage(customText){
       formData.append('file',file);
       if(text) formData.append('message',text);
       // Nota: esto enviará el archivo como $binary.file en n8n
-      res=await fetch('https://warming-potential-filled-attended.trycloudflare.com/webhook/test', { method:'POST', body:formData });
+      res=await fetch('https://activists-low-trees-dial.trycloudflare.com/webhook/test', { method:'POST', body:formData });
     } else {
       // Envío solo texto como JSON
-      res=await fetch('https://warming-potential-filled-attended.trycloudflare.com/webhook/test', {
+      res=await fetch('https://activists-low-trees-dial.trycloudflare.com/webhook/test', {
         method:'POST',
         headers:{'Content-Type':'application/json'},
         body:JSON.stringify({message:text})
